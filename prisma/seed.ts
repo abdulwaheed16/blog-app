@@ -1,8 +1,4 @@
-import {
-  PrismaClient,
-  PostStatus,
-  ReactionType,
-} from '../generated/prisma/client';
+import { PrismaClient, PostStatus, ReactionType } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
