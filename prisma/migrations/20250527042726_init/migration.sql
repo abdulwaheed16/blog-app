@@ -7,6 +7,7 @@ CREATE TYPE "ReactionType" AS ENUM ('LIKE', 'LOVE', 'HAHA', 'WOW', 'SAD', 'ANGRY
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
+    "fullName" VARCHAR(255) NOT NULL,
     "username" VARCHAR(30) NOT NULL,
     "email" VARCHAR(255) NOT NULL,
     "password" VARCHAR(255) NOT NULL,
@@ -70,6 +71,9 @@ CREATE TABLE "_PostCategories" (
 
     CONSTRAINT "_PostCategories_AB_pkey" PRIMARY KEY ("A","B")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_id_key" ON "User"("id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");

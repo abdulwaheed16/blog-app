@@ -18,7 +18,6 @@ async function bootstrap() {
   app.enableCors();
 
   // Set global prefix for API routes
-  app.setGlobalPrefix('api');
 
   // Enable Helmet for security
   // app.use(helmet());
@@ -34,6 +33,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(process.env.PORT ?? 3000);
+  // Set global prefix for API routes
+  // app.setGlobalPrefix('api');
+
+  await app.listen(process.env.PORT ?? 3001);
 }
 bootstrap();
